@@ -1,5 +1,6 @@
 package com.neo4j.example.springdataneo4jintroapp;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.neo4j.ogm.annotation.*;
 
 import java.util.ArrayList;
@@ -21,8 +22,13 @@ public class Movie {
     @Property("tagline")
     private String description;
 
+    @JsonIgnoreProperties("movie")
     @Relationship(type = "ACTED_IN", direction = INCOMING)
-    private List<Person> actors = new ArrayList<>();
+    private List<Role> actors = new ArrayList<>();
+
+    @JsonIgnoreProperties({"actedIn", "directed"})
+    @Relationship(type = "DIRECTED", direction = INCOMING)
+    private List<Person> directors = new ArrayList<>();
 
     public Movie() {
     }
@@ -57,7 +63,11 @@ public class Movie {
 
     public void setDescription(String description) { this.description = description; }
 
-    public List<Person> getActors() { return actors; }
+    public List<Role> getActors() { return actors; }
 
-    public void setActors(List<Person> actors) { this.actors = actors; }
+    public void setActors(List<Role> actors) { this.actors = actors; }
+
+    public List<Person> getDirectors() { return directors; }
+
+    public void setDirectors(List<Person> directors) { this.directors = directors; }
 }

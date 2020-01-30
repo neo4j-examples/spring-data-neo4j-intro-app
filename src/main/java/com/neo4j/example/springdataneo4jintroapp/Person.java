@@ -1,5 +1,6 @@
 package com.neo4j.example.springdataneo4jintroapp;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.Property;
@@ -20,8 +21,13 @@ public class Person {
     @Property("born")
     private int birthyear;
 
+    @JsonIgnoreProperties("person")
     @Relationship(type = "ACTED_IN")
-    private List<Movie> movies = new ArrayList<>();
+    private List<Role> actedIn = new ArrayList<>();
+
+    @JsonIgnoreProperties({"actors", "directors"})
+    @Relationship(type = "DIRECTED")
+    private List<Movie> directed = new ArrayList<>();
 
     public Person() {
     }
@@ -49,7 +55,11 @@ public class Person {
         this.birthyear = birthyear;
     }
 
-    public List<Movie> getMovies() { return movies; }
+    public List<Role> getActedIn() { return actedIn; }
 
-    public void setMovies(List<Movie> movies) { this.movies = movies; }
+    public void setActedIn(List<Role> movies) { this.actedIn = actedIn; }
+
+    public List<Movie> getDirected() { return directed; }
+
+    public void setDirected(List<Movie> directed) { this.directed = directed; }
 }

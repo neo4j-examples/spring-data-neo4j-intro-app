@@ -15,11 +15,15 @@ public class Role {
     private List<String> roles = new ArrayList<>();
 
     @StartNode
-    @JsonIgnoreProperties("acted")
+    @JsonIgnoreProperties({"actedIn", "directed"})
+    //@JsonIgnoreProperties({"actedIn", "directed"})
+    //@JsonIgnoreProperties("actedIn")
     private Person person;
 
     @EndNode
-    @JsonIgnoreProperties("characters")
+    @JsonIgnoreProperties({"actors", "directors"})
+    //@JsonIgnoreProperties("actors")
+    //@JsonIgnoreProperties({"actors","directors})
     private Movie movie;
 
     public Role() {
@@ -34,9 +38,7 @@ public class Role {
         return id;
     }
 
-    public List<String> getRoles() {
-        return roles;
-    }
+    public List<String> getRoles() { return roles; }
 
     public Person getPerson() {
         return person;
