@@ -1,4 +1,4 @@
-package com.neo4j.example.springdataneo4jintroapp;
+package com.neo4j.example.springdataneo4jintroapp.domainClasses;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.neo4j.ogm.annotation.GeneratedValue;

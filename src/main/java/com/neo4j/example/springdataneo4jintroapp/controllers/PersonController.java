@@ -1,5 +1,7 @@
-package com.neo4j.example.springdataneo4jintroapp;
+package com.neo4j.example.springdataneo4jintroapp.controllers;
 
+import com.neo4j.example.springdataneo4jintroapp.domainClasses.Person;
+import com.neo4j.example.springdataneo4jintroapp.repositories.PersonRepository;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

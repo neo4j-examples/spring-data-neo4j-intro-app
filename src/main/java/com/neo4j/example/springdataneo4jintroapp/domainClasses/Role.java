@@ -1,4 +1,4 @@
-package com.neo4j.example.springdataneo4jintroapp;
+package com.neo4j.example.springdataneo4jintroapp.domainClasses;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.neo4j.ogm.annotation.*;
@@ -16,14 +16,10 @@ public class Role {
 
     @StartNode
     @JsonIgnoreProperties({"actedIn", "directed"})
-    //@JsonIgnoreProperties({"actedIn", "directed"})
-    //@JsonIgnoreProperties("actedIn")
     private Person person;
 
     @EndNode
     @JsonIgnoreProperties({"actors", "directors"})
-    //@JsonIgnoreProperties("actors")
-    //@JsonIgnoreProperties({"actors","directors})
     private Movie movie;
 
     public Role() {
