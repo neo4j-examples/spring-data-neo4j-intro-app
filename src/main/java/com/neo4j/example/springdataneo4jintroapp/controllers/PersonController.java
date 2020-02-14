@@ -4,6 +4,8 @@ import com.neo4j.example.springdataneo4jintroapp.domainClasses.Person;
 import com.neo4j.example.springdataneo4jintroapp.repositories.PersonRepository;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/persons")
 public class PersonController {
@@ -25,5 +27,10 @@ public class PersonController {
     @GetMapping("/search/{name}")
     public Iterable<Person> findPersonByNameLike(@PathVariable String name) {
         return personRepository.findPersonByNameLike(name);
+    }
+
+    @GetMapping("/actanddirect")
+    public List<Person> getPersonsWhoActAndDirect() {
+        return personRepository.getPersonsWhoActAndDirect();
     }
 }
