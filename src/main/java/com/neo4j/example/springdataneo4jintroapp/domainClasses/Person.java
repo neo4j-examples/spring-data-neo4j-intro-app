@@ -57,7 +57,7 @@ public class Person {
 
     public List<Role> getActedIn() { return actedIn; }
 
-    public void setActedIn(List<Role> movies) { this.actedIn = actedIn; }
+    public void setActedIn(List<Role> movies) { this.actedIn = movies; }
 
     public List<Movie> getDirected() { return directed; }
 
