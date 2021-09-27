@@ -1,0 +1,13 @@
+= Spring Data Neo4j Intro App
+
+This application's goal is to provide a minimum REST API functionality for using Spring Data Neo4j with SpringBoot and Neo4j graph database. The project uses the following technologies:
+
+* Spring Data Neo4j 5
+* OGM (object graph mapper) library for object mapping
+* Spring Boot (version 2.2.2)
+
+These are previous versions of the technologies. For the latest versions, please see the similar and full-featured https://github.com/neo4j-examples/movies-java-spring-data-neo4j[Github project^].
+
+== Data set
+
+The data set uses the movie data set (a Neo4j favorite), describing movies and the people connected to them (actors, directors, etc).
