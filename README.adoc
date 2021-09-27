@@ -11,3 +11,8 @@ These are previous versions of the technologies. For the latest versions, please
 == Data set
 
 The data set uses the movie data set (a Neo4j favorite), describing movies and the people connected to them (actors, directors, etc).
+
+== Resources
+
+* Developer Guide: https://neo4j.com/developer/spring-data-neo4j/[Spring Data Neo4j^]
+* Documentation: https://docs.spring.io/spring-data/neo4j/docs/current/reference/html/#reference[Spring Data Neo4j^]
