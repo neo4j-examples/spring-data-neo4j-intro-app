@@ -1,17 +1,22 @@
 package com.neo4j.example.springdataneo4jintroapp.domainClasses;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.neo4j.ogm.annotation.*;
+import org.springframework.data.neo4j.core.schema.GeneratedValue;
+import org.springframework.data.neo4j.core.schema.Id;
+import org.springframework.data.neo4j.core.schema.Node;
+import org.springframework.data.neo4j.core.schema.Property;
+import org.springframework.data.neo4j.core.schema.Relationship;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.neo4j.ogm.annotation.Relationship.INCOMING;
+import static org.springframework.data.neo4j.core.schema.Relationship.Direction.INCOMING;
+
 
 /**
  * @author Jennifer Reif
  */
-@NodeEntity
+@Node
 public class Movie {
     @Id
     @GeneratedValue
@@ -30,13 +35,10 @@ public class Movie {
     @Relationship(type = "DIRECTED", direction = INCOMING)
     private List<Person> directors = new ArrayList<>();
 
-    public Movie() {
-    }
-
-    public Movie(String title, int released, String tagline) {
+    public Movie(String title, int released, String description) {
         this.title = title;
         this.released = released;
-        this.description = tagline;
+        this.description = description;
     }
 
     public Long getId() {

@@ -1,8 +1,8 @@
 package com.neo4j.example.springdataneo4jintroapp.repositories;
 
 import com.neo4j.example.springdataneo4jintroapp.domainClasses.Person;
-import org.springframework.data.neo4j.annotation.Query;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
+import org.springframework.data.neo4j.repository.query.Query;
 
 import java.util.List;
 

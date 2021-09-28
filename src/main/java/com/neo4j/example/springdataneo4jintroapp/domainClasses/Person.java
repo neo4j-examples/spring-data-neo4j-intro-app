@@ -1,10 +1,10 @@
 package com.neo4j.example.springdataneo4jintroapp.domainClasses;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.neo4j.ogm.annotation.GeneratedValue;
-import org.neo4j.ogm.annotation.Id;
-import org.neo4j.ogm.annotation.Property;
-import org.neo4j.ogm.annotation.Relationship;
+import org.springframework.data.neo4j.core.schema.GeneratedValue;
+import org.springframework.data.neo4j.core.schema.Id;
+import org.springframework.data.neo4j.core.schema.Property;
+import org.springframework.data.neo4j.core.schema.Relationship;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,22 +19,19 @@ public class Person {
 
     private String name;
     @Property("born")
-    private int birthyear;
+    private Integer birthYear;
 
     @JsonIgnoreProperties("person")
     @Relationship(type = "ACTED_IN")
-    private List<Role> actedIn = new ArrayList<>();
+    private List<Movie> actedIn = new ArrayList<>();
 
     @JsonIgnoreProperties({"actors", "directors"})
     @Relationship(type = "DIRECTED")
     private List<Movie> directed = new ArrayList<>();
 
-    public Person() {
-    }
-
-    public Person(String name, int birthyear) {
+    public Person(String name, Integer birthYear) {
         this.name = name;
-        this.birthyear = birthyear;
+        this.birthYear = birthYear;
     }
 
     public Long getId() {
@@ -47,17 +44,17 @@ public class Person {
 
     public void setName(String name) { this.name = name; }
 
-    public int getBirthyear() {
-        return birthyear;
+    public int getBirthYear() {
+        return birthYear;
     }
 
-    public void setBirthyear(int birthyear) {
-        this.birthyear = birthyear;
+    public void setBirthYear(int birthYear) {
+        this.birthYear = birthYear;
     }
 
-    public List<Role> getActedIn() { return actedIn; }
+    public List<Movie> getActedIn() { return actedIn; }
 
-    public void setActedIn(List<Role> movies) { this.actedIn = movies; }
+    public void setActedIn(List<Movie> movies) { this.actedIn = movies; }
 
     public List<Movie> getDirected() { return directed; }
 

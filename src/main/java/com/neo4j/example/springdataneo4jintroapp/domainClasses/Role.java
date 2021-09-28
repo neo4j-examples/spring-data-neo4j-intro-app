@@ -1,12 +1,15 @@
 package com.neo4j.example.springdataneo4jintroapp.domainClasses;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.neo4j.ogm.annotation.*;
+import org.springframework.data.neo4j.core.schema.GeneratedValue;
+import org.springframework.data.neo4j.core.schema.Id;
+import org.springframework.data.neo4j.core.schema.RelationshipProperties;
+import org.springframework.data.neo4j.core.schema.TargetNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@RelationshipEntity(type = "ACTED_IN")
+@RelationshipProperties
 public class Role {
     @Id
     @GeneratedValue
@@ -14,21 +17,9 @@ public class Role {
 
     private List<String> roles = new ArrayList<>();
 
-    @StartNode
+    @TargetNode
     @JsonIgnoreProperties({"actedIn", "directed"})
     private Person person;
-
-    @EndNode
-    @JsonIgnoreProperties({"actors", "directors"})
-    private Movie movie;
-
-    public Role() {
-    }
-
-    public Role(Person person, Movie movie) {
-        this.person = person;
-        this.movie = movie;
-    }
 
     public Long getId() {
         return id;
@@ -40,7 +31,4 @@ public class Role {
         return person;
     }
 
-    public Movie getMovie() {
-        return movie;
-    }
 }
