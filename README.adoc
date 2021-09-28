@@ -2,11 +2,10 @@
 
 This application's goal is to provide a minimum REST API functionality for using Spring Data Neo4j with SpringBoot and Neo4j graph database. The project uses the following technologies:
 
-* Spring Data Neo4j 5
-* OGM (object graph mapper) library for object mapping
-* Spring Boot (version 2.2.2)
+* Spring Data Neo4j 6
+* Spring Boot (version 2.5.5)
 
-These are previous versions of the technologies. For the latest versions, please see the similar and full-featured https://github.com/neo4j-examples/movies-java-spring-data-neo4j[Github project^].
+Previous technologies (SDN5+OGM) are shown on the `sdn5` branch of this repository.
 
 == Data set
 
