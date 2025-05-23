@@ -13,6 +13,36 @@ The data set uses the movie data set (a Neo4j favorite), describing movies and t
 
 image::movies-graph-data-model.png[Movies graph data model]
 
+== Run the application
+
+[source,shell]
+----
+./mvnw spring-boot:run
+----
+
+Test the application by hitting the following endpoints:
+
+[source, shell]
+----
+#all movies
+http ":8080/movies"
+#find movie by title
+http ":8080/movies/The Polar Express"
+#find movie title like (fuzzy search)
+http ":8080/movies/search/Matrix"
+
+#all people
+http ":8080/people"
+#find person by name
+http ":8080/people/Carrie Fisher"
+#find person by name like (fuzzy search)
+http ":8080/people/search/Bale"
+#find people who acted in and directed a movie
+http ":8080/people/actanddirect"
+----
+
+*Note:* The above commands are using the https://httpie.io/[HTTPie^] command line tool, but you can use `curl` similarly.
+
 == Resources
 
 * Documentation: https://docs.spring.io/spring-data/neo4j/reference/[Spring Data Neo4j^]
