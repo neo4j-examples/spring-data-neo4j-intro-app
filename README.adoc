@@ -2,8 +2,8 @@
 
 This application's goal is to provide a minimum REST API functionality for using Spring Data Neo4j with SpringBoot and Neo4j graph database. The project uses the following technologies:
 
-* Spring Data Neo4j 6
-* Spring Boot (version 2.5.5)
+* Spring Data Neo4j
+* Spring Boot
 
 Previous technologies (SDN5+OGM) are shown on the `sdn5` branch of this repository.
 
@@ -11,7 +11,8 @@ Previous technologies (SDN5+OGM) are shown on the `sdn5` branch of this reposito
 
 The data set uses the movie data set (a Neo4j favorite), describing movies and the people connected to them (actors, directors, etc).
 
+image::movies-graph-data-model.png[Movies graph data model]
+
 == Resources
 
-* Developer Guide: https://neo4j.com/developer/spring-data-neo4j/[Spring Data Neo4j^]
-* Documentation: https://docs.spring.io/spring-data/neo4j/docs/current/reference/html/#reference[Spring Data Neo4j^]
+* Documentation: https://docs.spring.io/spring-data/neo4j/reference/[Spring Data Neo4j^]
